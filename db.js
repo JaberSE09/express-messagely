@@ -1,12 +1,13 @@
-/** Database connection for messagely. */
-
+/** Database setup for BizTime. */
 
 const { Client } = require("pg");
-const { DB_URI } = require("./config");
 
-const client = new Client(DB_URI);
+let db = new Client({
+  user:"sajid" ,
+  password: "root",
+  database: "messagely",
+});
 
-client.connect();
+db.connect();
 
-
-module.exports = client;
+module.exports = db;
